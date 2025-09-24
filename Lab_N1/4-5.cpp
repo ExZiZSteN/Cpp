@@ -19,8 +19,8 @@ int * add(vector<int> add,vector<int> ins, int pos){
 
 
 int main(){
-    vector<int> arr1 {1,2,3,4,5,6};
-    vector<int> arr2 {7,8,9,10};
+    vector<int> arr1 {1,2,3,4,5};
+    vector<int> arr2 {7,8,9,};
     cout << "First array: ";
     for (int i {0}, len {arr1.size()}; i < len; i++){
         cout << arr1[i] << " ";
