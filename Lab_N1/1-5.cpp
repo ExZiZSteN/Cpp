@@ -1,5 +1,7 @@
 #include <iostream>
+#include <limits>
 using namespace std;
+
 
 bool is2Digits(int x) {
 	int div = (int)x / 10;
@@ -12,16 +14,26 @@ bool is2Digits(int x) {
 }
 
 int main() {
+
 	int number {};
 	cout << "Enter your number: " << endl;
-	cin >> number;
-	
-	
+	while (true){
+		if (cin >> number){
+			break;
+		}
+		else{
+			cout << "Invalid input. Please enter an integer: " << endl;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
+	}
+	cout << number << endl;
 	if (is2Digits(number)) {
 		cout << "true";
 	}
 	else {
 		cout << "false";
+
 	}
 	return 0;
 }
