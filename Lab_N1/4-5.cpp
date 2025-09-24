@@ -19,8 +19,27 @@ int * add(vector<int> add,vector<int> ins, int pos){
 
 
 int main(){
-    vector<int> arr1 {1,2,3,4,5};
-    vector<int> arr2 {7,8,9,};
+    vector<int> arr1 {};
+    vector<int> arr2 {};
+    int n {};
+    cout << "Enter len of arr1 ";
+    cin >> n;
+    for (int i {}; i < n; i++){
+        int number;
+        cout << "enter " << i+1 << " number ";
+        cin >> number;
+        arr1.push_back(number);
+    };
+    int n2 {};
+    cout << "Enter len of arr2 ";
+    cin >> n2;
+    int j {0};
+    for (j; j < n2; j++){
+        int number;
+        cout << "enter " << j+1 << " number ";
+        cin >> number;
+        arr2.push_back(number);
+    };
     cout << "First array: ";
     for (int i {0}, len {arr1.size()}; i < len; i++){
         cout << arr1[i] << " ";
