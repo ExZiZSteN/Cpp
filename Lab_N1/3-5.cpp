@@ -18,5 +18,5 @@ int main(){
     cout << "Enter value of number x: "<< endl;
     cin >> x;
     int result = numLen(x);
-    cout << result;
+    cout << result << " Digits " << endl;
 }
