@@ -4,10 +4,8 @@ using namespace std;
 
 string chet(int x){
     string result = "";
-    for (int i {0}; i <= x; i++){
-        if (i % 2 == 0){
-            result += to_string(i) + " ";
-        }
+    for (int i {0}; i <= x; i += 2){
+        result += to_string(i) + " ";
     }
     return result;
 }
