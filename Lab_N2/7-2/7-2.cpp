@@ -34,7 +34,9 @@ int main()
         }
         vec.push_back(value);
     }
-    std::sort(vec.begin(),vec.end());
+    // std::sort(vec.begin(),vec.end());
+    std::vector<int>::iterator mid = vec.begin() + vec.size() /2;
+    std::partial_sort(vec.begin(),mid,vec.end());
     std::vector<int> res {};
     std::cout << "First three elements after sorting:"<<std::endl;
     std::copy(vec.begin(),vec.begin()+3,std::back_insert_iterator(res));
