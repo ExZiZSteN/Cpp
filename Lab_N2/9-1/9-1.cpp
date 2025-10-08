@@ -88,5 +88,6 @@ int main(){
             counter++;
         }
     }
+    std::cout << "Number of times  when V0 was on VI: ";
     std::cout << counter;
 }
