@@ -54,7 +54,7 @@ int main(){
         int VLength {};
         std::cout << "Input length of " << i +1 << " array: ";
         while (true){
-            if (std::cin >> VLength && N > 0 && VLength > V0Lenght){
+            if (std::cin >> VLength && VLength && VLength > V0Lenght){
                 break;
             }
             else{
@@ -84,7 +84,7 @@ int main(){
 
 
     for (auto& i : vectors){
-        if (std::includes(V0.begin(),V0.end(),i.begin(),i.end())){
+        if (std::includes(i.begin(),i.end(),V0.begin(),V0.end())){
             counter++;
         }
     }
