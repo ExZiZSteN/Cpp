@@ -4,8 +4,8 @@ using namespace std;
 
 void square(int x){
     string result = "";
-    for (int i{}; i  <= x; i++){
-        for (int j{}; j <= x; j++){
+    for (int i{}; i  < x; i++){
+        for (int j{}; j < x; j++){
             result += "*";
         }
         result += "\n";

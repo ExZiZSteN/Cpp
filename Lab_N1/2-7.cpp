@@ -3,7 +3,7 @@
 using namespace std;
 
 int sum2(int x, int y){
-    if (10 < x+y < 20) return 20;
+    if (10 < x+y && x+y < 20) return 20;
     return x + y;
 }
 
