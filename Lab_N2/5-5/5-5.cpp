@@ -6,6 +6,7 @@
 int main(){
     std::list<int> lst {};
     int LstLenght {};
+    std::cout << "Enter legnth of list:";
     while (true){
         if (std::cin >> LstLenght && LstLenght > 0){
             break;
@@ -33,8 +34,8 @@ int main(){
         lst.push_back(value);
     }
     auto negative = std::find_if(lst.begin(), lst.end(), [](int x){ return x < 0;});
-    lst.insert(negative, 0);
     auto positive = std::find_if(lst.rbegin(), lst.rend(), [](int x){ return x > 0;});
+    lst.insert(++negative, 0);
     lst.insert((++positive).base(), 0);
     std::cout << "After inserting 0 before first negativ element the list is: " << std::endl;
     for (const auto& item : lst){
