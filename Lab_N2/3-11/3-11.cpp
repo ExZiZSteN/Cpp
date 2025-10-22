@@ -3,8 +3,8 @@
 
 
 int main(){
-    std::list<int> lst1 {};
-    std::list<int> lst2 {};
+    std::list<int> L1 {};
+    std::list<int> L2 {};
     int lstLenght {};
     std::cout << "Enter lenght of lists: " << std::endl;
     while (true){
@@ -31,7 +31,7 @@ int main(){
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
         }
-        lst1.push_back(value);
+        L1.push_back(value);
     }
     std::cout << "Enter elements of second list: " << std::endl;
     for (int i {0}; i < lstLenght; i++){
@@ -47,11 +47,11 @@ int main(){
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             }
         }
-        lst2.push_back(value);
+        L2.push_back(value);
     }
-    combineList(lst1, lst2);
+    combineList(L1, L2);
     std:: cout << "After combining two lists current list is: "  << std::endl;
-    for (const auto& item : lst2){
+    for (const auto& item : L2){
         std:: cout << item << " ";
     }
 }
