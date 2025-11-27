@@ -43,7 +43,21 @@ int main()
     std::cout << "Change type to int :" <<  x << std::endl;
     double y = lineSegment;
     std::cout << "Change type to double: "<<  y << std::endl;
-    LineSegment newLineSegment = lineSegment + 5;
+    std::cout << "Input value to add: "<< std::endl;
+    int d{};
+    while (true)
+    {
+        if (std::cin >> d){
+            break;
+        }
+        else{
+            std::cout <<"Invalid input." << std::endl;
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+        }
+    }
+    
+    LineSegment newLineSegment = lineSegment + d;
     std::cout << "Line segment after adding 5: ";
     newLineSegment.print();
     if (lineSegment > 5)
