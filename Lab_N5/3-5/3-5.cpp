@@ -1,24 +1,6 @@
-#include <iostream>
 #include <limits>
+#include "Laba5.h"
 
-struct Toy{
-    char name[50];
-    int price;
-    int minAge;
-    int maxAge;
-};
-
-void save(){
-    struct Toy t1 = {"Car",30,3,7};
-    struct Toy t2 = {"Sword",50,5,10};
-    struct Toy t3 = {"Train",40,4,8};
-    const char * fileName = "toys.bin";
-    FILE * file = fopen(fileName, "wb");
-    fwrite(&t1, sizeof(struct Toy),1,file);
-    fwrite(&t2, sizeof(struct Toy),1,file);
-    fwrite(&t3, sizeof(struct Toy),1,file);
-    fclose(file);
-}
 
 int main()
 {

@@ -1,48 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
 #include <limits>
-
-using Matrix = std::vector<std::vector<int>>;
-
-void makeFile(int& N)
-{
-    srand(time(0));
-    const char * fileName = "numbers.bin";
-    FILE * file = fopen(fileName, "wb");
-    for (int i = 0; i < N; i++){
-        int number = rand() % 10;
-        fwrite(&number, sizeof(int), 1, file);
-    }
-    fclose(file);
-}
-
-int findMaxRowProizv(const Matrix&M, int N){
-    int maxRow;
-    int maxRowProizv;
-    for (int i = 0; i < N; i++){
-        int Row {i+1};
-        int rowProizv {1};
-        for (int j = 0; j < N; j ++){
-            rowProizv *= M[i][j];
-        }
-        if (rowProizv > maxRowProizv){
-            maxRowProizv = rowProizv;
-            maxRow = Row;
-        }
-    }
-    return maxRow;
-}
-
-void printMatrix(const Matrix&M, int N){
-    for (int i = 0; i < N; i++){
-        for (int j = 0; j < N; j ++){
-            std::cout << M[i][j] << "\t";
-        }
-        std::cout << std::endl;
-    }
-}
-
+#include "Laba5.h"
 
 int main()
 {
@@ -59,7 +16,7 @@ int main()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
         }
     }
-    makeFile(N);
+    makeFile(N,"numbers.bin");
     int N2 = std::sqrt(N);
     if (N2 * N2 != N){
         N2 += 1;

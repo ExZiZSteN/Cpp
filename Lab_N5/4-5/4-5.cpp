@@ -2,23 +2,12 @@
 #include <vector>
 #include <fstream>
 #include <limits>
-
-
-void makeFile()
-{
-    int N = 10;
-    std::ofstream out("numbers.txt");
-    srand(time(0));
-    for (int i = 0; i < N; i++) {
-        int number = rand() % 10;
-        out << number << "\n";
-    }
-    out.close();
-}
+#include "Laba5.h"
 
 int main()
-{
-    makeFile();
+{   
+
+    makeFile("numbers.txt");
     int b;
     std::cout << "Enter number to find: ";
     while (true){

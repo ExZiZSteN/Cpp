@@ -1,28 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <fstream>
 #include <limits>
-
-
-void makeFile()
-{
-    int N = 10;
-    std::ofstream out("numbers.txt");
-    srand(time(0));
-    for (int i = 0; i < N; i++) {
-        int number = rand() % 10;
-        for (int j = 0; j < number % 5;j++){
-            int number2 = rand() % 10;
-            out << number2 << " ";
-        }
-        out << "\n";
-    }
-    out.close();
-}
+#include "Laba5.h"
 
 int main()
 {
-    makeFile();
+    makeFile("numbers.txt");
     int k;
     std::cout << "Enter number multiplicity to find: ";
     while (true){

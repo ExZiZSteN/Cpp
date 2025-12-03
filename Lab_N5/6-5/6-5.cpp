@@ -2,14 +2,7 @@
 #include <fstream>
 #include <string>
 #include <cctype>
-
-bool hasDigit(const std::string& s) {
-    for (char c : s) {
-        if (std::isdigit((unsigned char)c))
-            return true;
-    }
-    return false;
-}
+#include "Laba5.h"
 
 int main() {
     std::ifstream in("text.txt");

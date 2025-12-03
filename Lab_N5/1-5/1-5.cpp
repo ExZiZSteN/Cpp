@@ -1,25 +1,7 @@
-#include <iostream>
 #include <vector>
 #include <map>
 #include <limits>
-
-void makeFile(int& N)
-{
-    srand(time(0));
-    const char * fileName = "numbers.bin";
-    FILE * file = fopen(fileName, "wb");
-    //fwrtie(2,sizeof(int),1,file)
-    //fwrtie(2,sizeof(int),1,file)
-    //fwrtie(4,sizeof(int),1,file)
-    //fwrtie(5,sizeof(int),1,file)
-    //fwrtie(1,sizeof(int),1,file)
-    for (int i = 0; i < N; i++){
-        int number = rand() % 10;
-        fwrite(&number, sizeof(int), 1, file);
-    }
-    fclose(file);
-}
-
+#include "Laba5.h"
 
 int main()
 {
@@ -36,7 +18,7 @@ int main()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
         }
     }
-    makeFile(N);
+    makeFile(N,"numbers.bin");
 
     FILE * file = fopen("numbers.bin","rb");
     std::vector<int> numbers;
