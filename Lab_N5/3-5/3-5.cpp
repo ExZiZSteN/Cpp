@@ -4,7 +4,8 @@
 
 int main()
 {
-    save();
+    int N = 3;
+    save(N);
     int k;
     std::cout << "Enter maximum price: ";
     while (true){

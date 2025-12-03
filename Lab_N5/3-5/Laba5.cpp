@@ -38,14 +38,29 @@ void printMatrix(const Matrix&M, int N){
         std::cout << std::endl;
     }
 }
-void save(){
-    struct Toy t1 = {"Car",30,3,7};
-    struct Toy t2 = {"Sword",50,5,10};
-    struct Toy t3 = {"Train",40,4,8};
+
+void save(int N){
+    std::vector<struct Toy> toys;
+    for (int i = 0; i < N; i++){
+        std::cout << "Enter toy " << i + 1 << " details (name, price, minAge, maxAge)" << std::endl;
+        struct Toy t;
+        std::string name;
+        std::cin >> t.name;
+        int price;
+        std::cin >> t.price;
+        int minAge;
+        std::cin >> t.minAge;
+        int maxAge;
+        std::cin >> t.maxAge;
+        toys.push_back(t);
+    }
+    // struct Toy t1 = {"Car",30,3,7};
+    // struct Toy t2 = {"Sword",50,5,10};
+    // struct Toy t3 = {"Train",40,4,8};
     const char * fileName = "toys.bin";
     FILE * file = fopen(fileName, "wb");
-    fwrite(&t1, sizeof(struct Toy),1,file);
-    fwrite(&t2, sizeof(struct Toy),1,file);
-    fwrite(&t3, sizeof(struct Toy),1,file);
+    for (const auto& toy : toys){
+        fwrite(&toy, sizeof(struct Toy),1,file);
+    }
     fclose(file);
 }

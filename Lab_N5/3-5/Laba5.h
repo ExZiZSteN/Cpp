@@ -17,4 +17,4 @@ struct Toy{
     int maxAge;
 };
 
-void save();
+void save(int N);
