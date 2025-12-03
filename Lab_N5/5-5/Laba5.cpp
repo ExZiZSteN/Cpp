@@ -7,7 +7,11 @@ void makeFile(const char * fileName)
     std::ofstream out("numbers.txt");
     srand(time(0));
     for (int i = 0; i < N; i++) {
-        int number = rand() % 10;
+        int number = rand() % 10 + 1;
+        for (int j = 0; j < number % 5; j++){
+            int number2 = rand() % 10 + 1;
+            out << number2 << " ";
+        }
         out << number << "\n";
     }
     out.close();
