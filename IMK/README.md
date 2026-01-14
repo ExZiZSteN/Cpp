@@ -19,7 +19,7 @@
 - routes
 - (`text`, origin, `text` destination, `serial` id)
 - trips
-- (`int` driver_id, `int` truck_id, `int` cargo_id, `int` route_id, `date` departure_date, `date` departure_date_actual, `date` arrival_date, `date` arrival_date_actual, `text`, status)
+- (`int` driver_id, `int` truck_id, `int` cargo_id, `int` route_id, `date` departure_date, `date` departure_date_actual, `date` arrival_date, `date` arrival_date_actual, `text`, status, `serial` id)
 
 
 
