@@ -11,14 +11,21 @@
 
 Основные таблицы:
 - drivers
+- (`text` surname, `text` name, `text` middle_name, `date` birth_date, `text` phone_number, `text` license_number, `text` driver_status, `serial` id)
 - trucks
+- (`text` brand, `text` model, `int` year, `numeric` capasity_tons, `text` plate_number, `text` truck_status, `serial` id)
 - cargos
+- (`text`, description, `numeric` weight_tons, `text` sender, `text` receiver, `text` type, `text` cargo_status, `serial` id)
 - routes
+- (`text`, origin, `text` destination, `serial` id)
 - trips
+- (`int` driver_id, `int` truck_id, `int` cargo_id, `int` route_id, `date` departure_date, `date` departure_date_actual, `date` arrival_date, `date` arrival_date_actual, `text`, status)
+
+
 
 ## Архитектура приложения
 Приложение построено по принципу разделения логики и интерфейса.  
-Вся работа с базой данных инкапсулирована в классе Databasemanager.
+Вся работа с базой данных реализована в классе Databasemanager.
 
 ## Работа с рейсами
 При добавлении рейса пользователь выбирает водителя, грузовик, груз и маршрут.  
